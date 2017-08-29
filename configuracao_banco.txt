@@ -1,0 +1,5 @@
+usuario:
+senha:
+host:
+porta:
+banco:

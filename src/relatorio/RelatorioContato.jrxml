@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f844bb7b-b879-4c88-8916-f2d7c8490199">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="contato" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="filtros" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="data" class="java.lang.String"/>
+	<field name="key_from_me" class="java.lang.Boolean"/>
+	<field name="time" class="java.sql.Time"/>
+	<field name="date" class="java.util.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="35" forecolor="#666666" uuid="b19b85ec-338a-44cd-8f96-efec90996c85"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RESULTADOS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="95" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="52" isPrintWhenDetailOverflows="true" uuid="465af3b7-08a9-4812-a7a3-d2b4b904c584"/>
+				<graphicElement>
+					<pen lineWidth="0.0" lineStyle="Dotted" lineColor="#CCCCCC"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="0" width="168" height="17" uuid="b809f3c4-831b-4bbb-82b8-072c983638a3"/>
+				<textElement>
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PESQUISA MENSAGENS DE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="17" width="59" height="25" uuid="0280a77e-57bc-4189-9433-1e396f4e6e15"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FILTROS:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="59" y="17" width="485" height="78" isPrintWhenDetailOverflows="true" uuid="7cd4229f-d93f-4f82-b0c6-5d797fd1514c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{filtros}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="168" y="0" width="373" height="20" uuid="26b12bc1-e5e7-46ba-802a-bd1677b5dea4"/>
+				<textElement>
+					<font fontName="SansSerif" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{contato}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="251" height="20" forecolor="#003333" uuid="feb276a6-ead3-4c27-a8ba-5e778407ed7c"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Mensagens]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="0" width="121" height="20" forecolor="#003333" uuid="4544a00a-57d8-41d6-afb8-c1b8706d6848"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Enviada/Recebida]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="441" y="0" width="107" height="20" forecolor="#003333" uuid="11663f4f-4ede-4440-ba62-55b1c3f3e64d"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Data e Hora]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="271" height="20" isPrintWhenDetailOverflows="true" backcolor="#FFFFFF" uuid="9543c449-fcfe-43bc-9299-12ea9b44e092"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="291" y="0" width="94" height="20" backcolor="#FFFFFF" uuid="2c3932d1-43c9-4581-902c-43defc5dd6d6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{key_from_me}==true?"Enviada":"Recebida")]]></textFieldExpression>
+			</textField>
+			<textField pattern="HH:mm">
+				<reportElement x="501" y="0" width="47" height="20" backcolor="#FFFFFF" uuid="09360ec9-594d-4b22-b02e-e5403578526b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{time}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="441" y="0" width="60" height="20" backcolor="#FFFFFF" uuid="685d1f5d-36f1-4fee-803a-bede07fd7650"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<line direction="BottomUp">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="25" width="548" height="4" isPrintWhenDetailOverflows="true" forecolor="#CCCCCC" uuid="8d2d1e38-26c8-4d29-8b92-e93b7a1b3426"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="11" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="39" splitType="Stretch">
+			<textField>
+				<reportElement x="455" y="12" width="100" height="20" uuid="1c63e818-edcc-4be2-b0ad-7f1caa12d020"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="16" splitType="Stretch"/>
+	</summary>
+</jasperReport>
