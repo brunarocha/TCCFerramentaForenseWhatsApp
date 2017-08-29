@@ -30,6 +30,7 @@ import view.dispositivo.TelaNovoDispositivo;
 import view.dispositivo.TelaPrincipalDispositivo;
 import view.usuario.TelaAlterarUsuario;
 import view.usuario.TelaLogin;
+import view.usuario.TelaSobre;
 
 /**
  *
@@ -108,6 +109,8 @@ public class TelaPrincipalCaso extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         menuConfigurar = new javax.swing.JMenu();
         botaoAlterarDados = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        itemSobre = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("LISTA DE CASOS");
@@ -324,6 +327,18 @@ public class TelaPrincipalCaso extends javax.swing.JFrame {
 
         jMenuBar1.add(menuConfigurar);
 
+        jMenu2.setText("Ajuda");
+
+        itemSobre.setText("Sobre");
+        itemSobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemSobreActionPerformed(evt);
+            }
+        });
+        jMenu2.add(itemSobre);
+
+        jMenuBar1.add(jMenu2);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -442,6 +457,10 @@ public class TelaPrincipalCaso extends javax.swing.JFrame {
         this.dispose();
         new TelaLogin().setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void itemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemSobreActionPerformed
+         new TelaSobre().setVisible(true);
+    }//GEN-LAST:event_itemSobreActionPerformed
 
     
     private void gerenciaTela() {
@@ -609,8 +628,10 @@ public class TelaPrincipalCaso extends javax.swing.JFrame {
     private javax.swing.JMenuItem itemAlterar;
     private javax.swing.JMenuItem itemExcluir;
     private javax.swing.JMenuItem itemNovoCaso;
+    private javax.swing.JMenuItem itemSobre;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JTabbedPane jTabbedPane1;

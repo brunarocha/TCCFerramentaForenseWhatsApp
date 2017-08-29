@@ -69,6 +69,8 @@ public class TelaLogin extends javax.swing.JFrame {
         itemCadastrar = new javax.swing.JMenuItem();
         itemListar = new javax.swing.JMenuItem();
         itemMenuConfiguracaoBanco = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
+        itemSobre = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("LOGIN");
@@ -140,6 +142,18 @@ public class TelaLogin extends javax.swing.JFrame {
             }
         });
         jMenuBar1.add(itemMenuConfiguracaoBanco);
+
+        jMenu1.setText("Ajuda");
+
+        itemSobre.setText("Sobre");
+        itemSobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemSobreActionPerformed(evt);
+            }
+        });
+        jMenu1.add(itemSobre);
+
+        jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
 
@@ -233,6 +247,10 @@ public class TelaLogin extends javax.swing.JFrame {
         new TelaNovoUsuario(this, true).setVisible(true);
     }//GEN-LAST:event_itemCadastrarActionPerformed
 
+    private void itemSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemSobreActionPerformed
+        new TelaSobre().setVisible(true);
+    }//GEN-LAST:event_itemSobreActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -280,9 +298,11 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JMenuItem itemListar;
     private javax.swing.JMenu itemMenuConfiguracaoBanco;
     private javax.swing.JMenu itemMenuUsuarios;
+    private javax.swing.JMenuItem itemSobre;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
